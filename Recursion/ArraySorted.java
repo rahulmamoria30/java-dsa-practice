@@ -9,9 +9,9 @@ public class ArraySorted {
     }
     static  boolean isSorted(int[] arr, int i){
         if(i==arr.length-1) return true;
-        if(arr[i]<arr[i+1]){
-           return isSorted(arr, i+1);
-        }
-        return false;
+//        if(arr[i]<arr[i+1]){
+//           return isSorted(arr, i+1);
+//        }
+        return arr[i]<arr[i+1] && isSorted(arr, i+1);
     }
 }
