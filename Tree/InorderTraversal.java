@@ -7,14 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-class TreeNode {
-    int val;
-    TreeNode left, right;
-    TreeNode(int val){
-        this.val=val;
-        left = right = null;
-    }
-}
 public class InorderTraversal {
 
     public static void main(String[] args) {
