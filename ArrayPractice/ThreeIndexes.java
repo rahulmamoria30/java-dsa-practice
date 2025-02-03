@@ -1,5 +1,6 @@
 package ArrayPractice;// Online Java Compiler
 // Use this editor to write, compile and run your Java code online
+import java.util.ArrayList;
 import java.util.Arrays;
 class ThreeIndexes {
 
@@ -65,5 +66,46 @@ class ThreeIndexes {
         int[] nums={-5,-4,-3,-2};
         int[] ans = helper(nums);
         System.out.println("ans " + Arrays.toString(ans));
+    }
+
+    public static class Maze {
+
+        public static void main(String[] args) {
+
+            int row=3, col=3;
+            int ans = count(row, col);
+            System.out.println(ans);
+        }
+        static  int count(int row, int col){
+            if(row==1 || col ==1){
+                return 1;
+            }
+            return count(row-1, col)+count(row, col-1);
+        }
+    }
+
+    public static class MazeCpp {
+        public static void main(String[] args) {
+            int n=3;
+            ArrayList<String> ans = new ArrayList<>();
+             help(0,0,n, "", ans);
+            System.out.println(ans);
+        }
+
+        static public void help(int row, int col, int n, String s, ArrayList<String> ans ){
+
+            if(row==n-1 && col==n-1){
+                ans.add(s);
+                return;
+            }
+            if(row<n){
+                help(row+1, col, n, s+'D', ans);
+
+            }
+            if(col<n){
+                help(row, col+1, n, s+'R', ans);
+            }
+
+        }
     }
 }
